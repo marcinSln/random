@@ -1,0 +1,108 @@
+body {
+	background-color: $lighNavyBlue;
+	color: $textColor;
+}
+
+.site {
+	margin-top: 70px;
+}
+
+.text {
+	&--header {
+		font-size: 40px;
+	}
+
+	&--left {
+		text-align: left;
+	}
+
+	&--header-with-border {
+		border-left: 4px solid $lightColor;
+		padding-left: 20px;
+		margin: 0;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		color: $white;
+		font-weight: 500;
+		font-size: 24px;
+		margin-bottom: 40px;
+	}
+
+	&--white {
+		color: white;
+	}
+
+	&--base {
+		color: $textColor;
+	}
+
+	&--big {
+		font-size: 20px;
+	}
+
+	&--light-blue {
+		color: $headerBackground;
+	}
+
+	&__header {
+		&-block {
+			text-align: center;
+			margin: 20px 0px;
+		}
+	}
+
+	&--sub-header {
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	&--center {
+		text-align: center;
+	}
+}
+
+.link {
+	&--item {
+		color: white;
+		text-decoration: none;
+		font-weight: bold;
+	}
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	margin-top: 20px;
+	align-items: flex-start;
+
+	&--center {
+		align-items: center;
+	}
+}
+
+.no-margin {
+	margin: 0;
+}
+
+.wrapper {
+	max-width: calc(100% - 6%);
+	margin-left: 3%;
+	margin-right: 3%;
+	margin-top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	width: 100%;
+
+	&--start {
+		align-items: flex-start;
+	}
+}

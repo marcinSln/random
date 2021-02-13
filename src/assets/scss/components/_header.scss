@@ -1,0 +1,45 @@
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	right: 0;
+	display: flex;
+	grid-gap: 10px;
+	justify-content: flex-end;
+	padding: 10px 10px;
+	box-shadow: 0px 0px 5px $navyBlue;
+	background-color: $darkNavyBlue;
+	min-height: 56px;
+	box-sizing: border-box;
+	color: white;
+
+	&__link-box {
+		display: flex;
+		grid-column-gap: 10px;
+		color: $lightColor;
+		align-items: center;
+		text-decoration: none;
+		transition: all .3s ease-in-out;
+		&:hover {
+			color: $btnBase;
+		}
+	}
+
+	&--logged {
+		display: flex;
+		align-items: center;
+		grid-column-gap: 20px;
+		a {
+			text-decoration: none;
+		}
+
+		path {
+			color: $headerBackground;
+		}
+	}
+
+	a {
+		text-decoration: none;
+	}
+}

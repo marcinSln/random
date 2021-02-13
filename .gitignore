@@ -3,7 +3,9 @@
 # dependencies
 /node_modules
 /.pnp
+/src/config.js
 .pnp.js
+/.vscode/
 
 # testing
 /coverage

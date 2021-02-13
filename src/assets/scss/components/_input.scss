@@ -1,0 +1,29 @@
+.input {
+	&__field {
+		border: solid $borderFormColor 1px;
+		border-radius: 8px;
+		height: 30px;
+		width: 30px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		padding: 8px;
+		box-sizing: border-box;
+
+		&::-webkit-inner-spin-button {
+			display: none;
+		}
+
+		&:focus,
+		&:active {
+			outline: none;
+		}
+	}
+
+	&__block {
+		display: flex;
+		align-items: center;
+		grid-column-gap: 10px;
+	}
+}

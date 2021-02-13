@@ -1,0 +1,27 @@
+.toastr {
+	position: fixed;
+	top: 0px;
+	border-radius: 4px;
+	padding: 12px 16px;
+	right: 0;
+	width: 100%;
+	font-size: 14px;
+
+	&--success {
+		background-color: #1a6e15;
+		border: solid 1px #155724;
+		color: white;
+	}
+
+	&--error {
+		background-color: $lightColor;
+		color: $darkNavyBlue;
+		box-shadow: 0px 0px 6px 0px $navyBlue;
+	}
+
+	&__text {
+		width: 100%;
+		text-align: center;
+		font-weight: bold;
+	}
+}

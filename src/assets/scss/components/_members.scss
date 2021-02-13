@@ -1,0 +1,208 @@
+.member {
+	&__overall {
+		background-color: #021f3b;
+		color: white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		max-width: 40px;
+		pointer-events: none;
+	}
+
+	&__info {
+		display: flex;
+		text-align: center;
+		flex-direction: column;
+		grid-row-gap: 5px;
+		justify-content: center;
+		align-items: center;
+		padding: 8px 12px;
+		color: $white;
+		font-size: 12px;
+		width: 100%;
+		font-weight: 600;
+		pointer-events: none;
+
+		path {
+			color: $darkNavyBlue;
+		}
+	}
+
+	&__edit-input {
+		color: $lightColor;
+		background-color: $navyBlue;
+		border: solid 1px $lightColor;
+		position: absolute;
+		top: 100%;
+		z-index: 8;
+		width: calc(100% + 2px);
+		right: 0px;
+		left: -1px;
+		padding: 4px 8px;
+		box-sizing: border-box;
+		justify-content: center;
+		transition: all .3s ease-in-out;
+		transform: scaleY(0);
+		transform-origin: top;
+
+		.input__field {
+			color: $lightColor;
+			background-color: $navyBlue;
+			border: solid 1px $lightColor;
+		}
+
+		svg path {
+			fill: $lightColor;
+			pointer-events: none;
+		}
+
+		&.active {
+			transform: scaleY(1);
+			background: $darkNavyBlue;
+			border: solid 1px $lightColor;
+			border-top: none;
+		}
+	}
+}
+
+.list {
+	list-style-type: none;
+	padding-left: 0;
+	width: 100%;
+	grid-row-gap: 15px;
+	grid-column-gap: 15px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+
+	&__item {
+		margin-bottom: -1px;
+		background-color: $lighNavyBlue;
+		border: 1px solid $navyBlue;
+		transition: all .3s ease-in-out;
+		display: flex;
+		justify-content: flex-start;
+		position: relative;
+		align-items: stretch;
+		max-width: 150px;
+
+		.member__name {
+			min-height: 30px;
+		}
+
+		&--add {
+			.member__info {
+				display: flex;
+				flex-direction: row;
+			}
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+
+		&--selected {
+			background-color: $darkNavyBlue;
+			color: white;
+			border-color: $lightColor;
+
+			.member {
+				&__name {
+					color: $lightColor;
+				}
+
+				&__overall {
+					background-color: $lightColor;
+				}
+			}
+
+			path {
+				color: $bodyBackground;
+			}
+		}
+
+		&--home {
+			background-color: $darkNavyBlue;
+			border-color: $white;
+			color: $white;
+
+			.member {
+				&__name {
+					color: $white;
+				}
+
+				&__overall {
+					background-color: $white;
+					color: $darkNavyBlue;
+				}
+			}
+
+			path {
+				color: $bodyBackground;
+			}
+		}
+
+		&--away {
+			background-color: $darkNavyBlue;
+			border-color: $white;
+			color: $white;
+
+			.member {
+				&__name {
+					color: $darkNavyBlue;
+				}
+
+				&__info {
+					background-color: $white;
+					color: $darkNavyBlue;
+				}
+
+				&__overall {
+					background-color: $darkNavyBlue;
+					color: $white;
+				}
+			}
+
+			path {
+				color: $darkNavyBlue;
+			}
+		}
+
+		&--light-blue {
+			background-color: $headerBackground;
+			color: white;
+		}
+
+		&--hover {
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+.block {
+	margin: 24px;
+	padding: 56px 24px 40px 24px;
+	margin-top: 0px;
+	display: inline-block;
+	border: 1px solid rgba(0, 0, 0, .125);
+	background-color: $darkNavyBlue;
+	width: 100%;
+	max-width: 320px;
+
+	&--random {
+		background-color: $choosenTeams;
+	}
+
+	&--small-top {
+		padding-top: 24px;
+	}
+}
+
+.App {
+	display: flex;
+	align-items: flex-start;
+	grid-row-gap: 10px;
+	margin-top: 110px;
+}
