@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import Block from '../components/Block';
 import Input from '../components/Input';
-import Firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
+import Firebase from 'firebase/app'; // TODO Make component to connect into firebase
 import Btn from '../components/Btn';
 import config from '../config';
 import { Link } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
 import { Redirect } from 'react-router-dom';
 import Toastr from '../components/Toastr';
+import { validate } from '../components/FormHandler';
 
 export default class Login extends Component {
 	static contextType = AuthContext;
@@ -30,41 +29,32 @@ export default class Login extends Component {
 	}
 
 	handleSubmit = (e) => {
-		let form = e.target;
-		const { logIn, redirect } = this.context;
-		const { errors } = this.state;
-		if (!Firebase.apps.length) {
-			Firebase.initializeApp(config);
-		}
-
 		e.preventDefault();
+		const form = e.target,
+			{ logIn, redirect } = this.context,
+			{ errors } = this.state,
+			login = form.login.value,
+			password = form.password.value,
+			obj = {
+				title: '',
+				desc: '',
+				isActive: '',
+				login: login,
+				password: password
+			},
+			result = validate(obj);
 
-		let login = e.target.login.value;
-		let password = e.target.password.value;
-		let obj = {
-			id: '',
-			title: '',
-			desc: '',
-			isActive: ''
-		};
-
-		if (login === '' || password === '') {
-			obj.desc = 'Uzupełnij pola';
-			obj.title = 'error';
-			obj.isActive = true;
-
-			errors['password'] = password ? false : true;
-			errors['login'] = login ? false : true;
-
+		if (result.errors) {
 			this.setState({
-				toastr: obj,
-				errors: errors
+				toastr: result.toastr,
+				errors: result.errors
 			});
 
-			setTimeout((e) => {
+			setTimeout(() => {
 				obj.isActive = false;
 				this.setState({
-					toastr: obj
+					toastr: obj,
+					errors: ''
 				});
 			}, 3000);
 		} else {
@@ -76,18 +66,12 @@ export default class Login extends Component {
 					}
 				},
 				(error) => {
-					obj.desc = 'Hasło lub login są niepoprawne';
-					obj.title = 'error';
-					obj.isActive = true;
-
-					this.setState({
-						toastr: obj
-					});
-
-					setTimeout((e) => {
+					validate(obj);
+					setTimeout(() => {
 						obj.isActive = false;
 						this.setState({
-							toastr: obj
+							toastr: obj,
+							errors: ''
 						});
 					}, 3000);
 				}
