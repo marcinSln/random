@@ -6,8 +6,9 @@ import Admin from './Pages/Admin';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import AddMember from './Pages/AddMember';
-import AuthContext, { AuthProvider } from './context/AuthContext';
+import AuthContext, { AuthProvider } from './contexts/AuthContext';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { ToastContextProvider } from './contexts/ToastContext';
 
 class App extends Component {
 	render() {
@@ -17,16 +18,18 @@ class App extends Component {
 		Manage.contetType = AuthContext;
 		return (
 			<AuthProvider>
-				<BrowserRouter>
-					<Switch>
-						<Route exact path="/" component={Main} />
-						<Route exact path="/admin" component={Admin} />
-						<Route path="/manage" component={Manage} />
-						<Route path="/add" component={AddMember} />
-						<Route path="/register" component={Register} />
-						<Route path="/login" component={Login} />
-					</Switch>
-				</BrowserRouter>
+				<ToastContextProvider>
+					<BrowserRouter>
+						<Switch>
+							<Route exact path="/" component={Main} />
+							<Route exact path="/admin" component={Admin} />
+							<Route path="/manage" component={Manage} />
+							<Route path="/add" component={AddMember} />
+							<Route path="/register" component={Register} />
+							<Route path="/login" component={Login} />
+						</Switch>
+					</BrowserRouter>
+				</ToastContextProvider>
 			</AuthProvider>
 		);
 	}

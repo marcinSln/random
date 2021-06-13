@@ -5,7 +5,7 @@ import Block from '../components/Block';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as Icons from '@fortawesome/fontawesome-free-solid';
-import AuthContext from '../context/AuthContext';
+import AuthContext from '../contexts/AuthContext';
 import Input from '../components/Input';
 import { Redirect } from 'react-router-dom';
 import Firebase from 'firebase';

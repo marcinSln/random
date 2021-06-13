@@ -12,7 +12,7 @@
 		background-color: $lightColor;
 		color: $darkNavyBlue;
 		border: solid 1px $lightColor;
-		transiton: all .3s ease-in-out;
+		transition: all .3s ease-in-out;
 		&:hover,
 		&:focus,
 		&:active {
@@ -24,16 +24,16 @@
 	}
 
 	&--second {
-		background-color: $lighNavyBlue;
-		border: solid 1px $lighNavyBlue;
-		color: $white;
+		background-color: $body;
+		border: solid 1px $btnSecondText;
+		color: $btnSecondText;
 		&:hover,
 		&:focus,
 		&:active {
 			cursor: pointer;
-			border: solid 1px $white;
+			border: solid 1px $btnSecondText;
 			background-color: $darkNavyBlue;
-			color: $white;
+			color: $btnSecondText;
 		}
 	}
 

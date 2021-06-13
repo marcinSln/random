@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Block from '../components/Block';
-import Toastr from '../components/Toastr';
 import Input from '../components/Input';
 import Btn from '../components/Btn';
 import Firebase from 'firebase';
@@ -110,7 +109,6 @@ class Register extends Component {
 		const { redirect, toastr, errors } = this.state;
 		return (
 			<div className="wrapper">
-				<Toastr toastList={toastr} />
 				<Block>
 					<h2 className="text text--header-with-border"> Rejestracja: </h2>
 					<form className="form__content" onSubmit={(e) => this.handleSubmit(e)}>

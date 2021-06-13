@@ -1,7 +1,7 @@
 .form {
 	border-radius: 8px;
 	padding: 40px 24px 40px 24px;
-	border: solid 1px $borderFormColor;
+	border: solid 1px $darkNavyBlue;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -9,8 +9,7 @@
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: $darkNavyBlue;
-	border: 1px solid rgba(0, 0, 0, 0.125);
+	background-color: $blockBackground;
 
 	&__content {
 		max-width: 300px;
@@ -31,13 +30,14 @@
 		left: 8px;
 		transform: translateY(-50%);
 		transition: all .2s ease-in-out;
-		color: $textColor;
+		font-weight: 600;
+		color: $inputBorderHover;
 
 		&.isActive {
 			top: 0;
 			font-size: 12px;
 			transform: translateY(-110%);
-			color: white;
+			color: $inputTextColor;
 
 			&:after {
 				content: "";
@@ -63,10 +63,20 @@
 		outline: none;
 		font-size: 14px;
 		border: none;
-		border: solid 1px $borderFormColor;
+		border: solid 1px $darkNavyBlue;
 		padding: 8px;
-		color: $textColor;
+		font-weight: 600;
+		background-color: $body;
+		color: $inputTextColor;
+		transition: all .3s ease-in-out;
 		box-sizing: border-box;
+
+		&:hover,
+		&:active,
+		&:focus {
+			border-color: $inputBorderHover;
+			background-color: #1d2635;
+		}
 
 		&--error {
 			border: solid 2px $lightColor;

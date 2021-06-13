@@ -5,7 +5,7 @@ import Btn from "../components/Btn";
 import {  Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as Icons from "@fortawesome/fontawesome-free-solid";
-import AuthContext from '../context/AuthContext';
+import AuthContext from '../contexts/AuthContext';
 import { Redirect } from "react-router-dom";
 
 export default class Manage extends Component {

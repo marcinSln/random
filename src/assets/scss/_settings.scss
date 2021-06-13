@@ -1,22 +1,33 @@
 // colors
 $lightColor: #5cc0be;
 $white: #fff;
-$lighNavyBlue: #3b4e6c;
+$body: #252f41;
 $navyBlue: #1b2441;
-$darkNavyBlue: #0b132a;
+$darkNavyBlue: #2b394f;
 
-$btnBase: $lighNavyBlue;
+// blocks
+$blockBackground: #1d2635;
+
+// inputs
+$inputBackground: #394c6a;
+$inputBorder: #394c6a;
+$inputBorderHover: $lightColor;
+$inputTextColor: $lightColor;
+
+// buttons
+$btnBase: $body;
 $btnBaseHover: $lightColor;
 $btnSecond: $navyBlue;
 $btnSecondHover: $darkNavyBlue;
 $bodyBackground: $white;
+$btnSecondText: $lightColor;
 
 $borderFormColor: $btnSecond;
 $textColor: $btnSecond;
 
 $choosenTeams: $btnSecond;
 $headerBackground: $btnSecondHover;
-$blockBackground: $bodyBackground;
+// $blockBackground: $bodyBackground;
 $borderColor: $btnSecondHover;
 
 // $btnBase: #35689c;

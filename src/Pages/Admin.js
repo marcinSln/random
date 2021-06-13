@@ -6,7 +6,7 @@ import Box from '../components/Box';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import * as Icons from '@fortawesome/fontawesome-free-solid';
-import AuthContext from '../context/AuthContext';
+import AuthContext from '../contexts/AuthContext';
 import { Redirect } from 'react-router-dom';
 
 import '../assets/scss/app.scss';
